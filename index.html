@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASTRO - Профессиональный ремонт квартир и коттеджей под ключ</title>
+    <meta name="description" content="Строительная и отделочная команда ASTRO. Качественный ремонт под ключ: черновая и финальная отделка, малярные работы, демонтаж, электрика, сантехника, укладка плитки, дизайн-проекты.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1e40af",
+                        secondary: "#f59e0b",
+                        accent: "#3b82f6",
+                        dark: "#1f2937",
+                        light: "#f8fafc"
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'heading': ['Montserrat', 'sans-serif']
+                    },
+                    spacing: {
+                        '128': '32rem',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .section-padding {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+        @media (max-width: 768px) {
+            .section-padding {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-white">
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4">
+            <nav class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <div class="bg-primary text-white p-2 rounded-lg mr-3">
+                        <i class="fas fa-hammer text-xl"></i>
+                    </div>
+                    <a href="#home" class="text-2xl font-heading font-bold text-dark">ASTRO<span class="text-primary">.</span></a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-button" class="md:hidden text-dark">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="font-medium hover:text-primary transition">Главная</a>
+                    <a href="#about" class="font-medium hover:text-primary transition">О компании</a>
+                    <a href="#services" class="font-medium hover:text-primary transition">Услуги</a>
+                    <a href="#gallery" class="font-medium hover:text-primary transition">Галерея</a>
+                    <a href="#design" class="font-medium hover:text-primary transition">Дизайн-проекты</a>
+                    <a href="#reviews" class="font-medium hover:text-primary transition">Отзывы</a>
+                    <a href="#contact" class="font-medium hover:text-primary transition">Контакты</a>
+                </div>
+                
+                <div class="hidden md:block">
+                    <a href="#contact" class="bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-800 transition">Заказать звонок</a>
+                </div>
+            </nav>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden py-4 border-t">
+                <div class="flex flex-col space-y-4">
+                    <a href="#home" class="font-medium hover:text-primary transition">Главная</a>
+                    <a href="#about" class="font-medium hover:text-primary transition">О компании</a>
+                    <a href="#services" class="font-medium hover:text-primary transition">Услуги</a>
+                    <a href="#gallery" class="font-medium hover:text-primary transition">Галерея</a>
+                    <a href="#design" class="font-medium hover:text-primary transition">Дизайн-проекты</a>
+                    <a href="#reviews" class="font-medium hover:text-primary transition">Отзывы</a>
+                    <a href="#contact" class="font-medium hover:text-primary transition">Контакты</a>
+                    <a href="#contact" class="bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-800 transition text-center">Заказать звонок</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-gradient-to-r from-blue-50 to-light section-padding">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-heading font-bold text-dark mb-6">
+                        Профессиональный <span class="text-primary">ремонт</span> квартир и коттеджей под ключ
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Строительная и отделочная команда ASTRO. Качественный ремонт с гарантией. От черновой отделки до дизайн-проекта. Работаем быстро, чисто и профессионально.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#contact" class="bg-primary text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-800 transition text-center">Бесплатная консультация</a>
+                        <a href="#gallery" class="bg-white text-primary border-2 border-primary px-8 py-3 rounded-lg font-medium hover:bg-blue-50 transition text-center">Наши работы</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://picsum.photos/600/400?random=1" alt="Современный ремонт квартиры" class="rounded-xl shadow-2xl w-full" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-dark mb-4">О компании ASTRO</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Мы - команда профессионалов с более чем 10-летним опытом в сфере ремонта и отделки помещений.</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <img src="https://picsum.photos/550/400?random=2" alt="Команда ASTRO за работой" class="rounded-xl shadow-lg w-full" loading="lazy">
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <h3 class="text-2xl font-heading font-bold text-dark mb-6">Почему выбирают нас?</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-lg mr-4">
+                                <i class="fas fa-award text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2">Гарантия качества</h4>
+                                <p class="text-gray-600">Предоставляем гарантию на все виды работ до 5 лет. Используем только качественные материалы.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-lg mr-4">
+                                <i class="fas fa-calendar-alt text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2">Соблюдение сроков</h4>
+                                <p class="text-gray-600">Строго соблюдаем оговоренные сроки выполнения работ. Ценим ваше время.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-lg mr-4">
+                                <i class="fas fa-user-tie text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2">Опытные специалисты</h4>
+                                <p class="text-gray-600">В нашей команде работают только квалифицированные мастера с профильным образованием и опытом.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-lg mr-4">
+                                <i class="fas fa-ruler-combined text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2">Индивидуальный подход</h4>
+                                <p class="text-gray-600">Разрабатываем индивидуальные решения для каждого клиента с учетом пожеланий и бюджета.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-light section-padding">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-dark mb-4">Наши услуги</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Полный спектр услуг по ремонту и отделке помещений любой сложности</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                    <div class="bg-primary bg-opacity-10 p-4 rounded-lg inline-block mb-4">
+                        <i class="fas fa-home text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Ремонт квартир под ключ</h3>
+                    <p class="text-gray-600 mb-4">Полный цикл работ от черновой отделки до сдачи объекта "под ключ".</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-secondary mr-2"></i> Демонтажные работы</li>
+                        <li class="flex items-center"><i class="fas fa-check text-secondary mr-2"></i> Черновая отделка</li>
+                        <li class="flex items-center"><i class="fas fa-check text-secondary mr-2"></i> Чистовая отделка</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                    <div class="bg-primary bg-opacity-10 p-4 rounded-lg inline-block mb-4">
+                        <i class="fas fa-building text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Ремонт коттеджей</h3>
+                    <p class="text-gray-600 mb-4">Комплексный ремонт загородных домов и коттеджей любой площади.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-secondary mr-2"></i> Фасадные работы</li>
+                        <li class="flex items-center"><i class="fas fa-check text-secondary mr-2"></i> Внутренняя отделка</li>
+                        <li class="flex items-center"><i class="fas fa-check text-secondary mr-2"></i> Коммуникации</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                    <div class="bg-primary bg-opacity-10 p-4 rounded-lg inline-block mb-4">
+                        <i class="fas fa-paint-roller text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Малярные работы</h3>
+                    <p class="text-gray-600 mb-4">Качественная покраска стен, потолков, фасадов с подготовкой поверхностей.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-secondary mr-2"></i> Подготовка поверхностей</li>
+                        <li class="flex items-center"><i class="fas fa-check text-secondary mr-2"></i> Покраска стен и потолков</li>
+                        <li class="flex items-center"><i class="fas fa-check text-secondary mr-2"></i> Декоративная штукатурка</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                    <div class="bg-primary bg-opacity-10 p-4 rounded-lg inline-block mb-4">
+                        <i class="fas fa-bolt text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Электромонтажные работы</h3>
+                    <p class="text-gray-600 mb-4">Полный комплекс электромонтажных работ с соблюдением всех норм безопасности.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-secondary mr-2"></i> Разводка электрики</li>
+                        <li class="flex items-center"><i class="fas fa-check text-secondary mr-2"></i> Установка розеток и выключателей</li>
+                        <li class="flex items-center"><i class="fas fa-check text-secondary mr-2"></i> Монтаж освещения</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                    <div class="bg-primary bg-opacity-10 p-4 rounded-lg inline-block mb-4">
+                        <i class="fas fa-faucet text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Сантехнические работы</h3>
+                    <p class="text-gray-600 mb-4">Установка и замена сантехники, разводка труб, монтаж систем водоснабжения и канализации.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-secondary mr-2"></i> Установка сантехники</li>
+                        <li class="flex items-center"><i class="fas fa-check text-secondary mr-2"></i> Разводка труб</li>
+                        <li class="flex items-center"><i class="fas fa-check text-secondary mr-2"></i> Монтаж систем отопления</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                    <div class="bg-primary bg-opacity-10 p-4 rounded-lg inline-block mb-4">
+                        <i class="fas fa-th-large text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Укладка плитки</h3>
+                    <p class="text-gray-600 mb-4">Профессиональная укладка керамической плитки, керамогранита, мозаики в ванных, кухнях, прихожих.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-secondary mr-2"></i> Укладка напольной плитки</li>
+                        <li class="flex items-center"><i class="fas fa-check text-secondary mr-2"></i> Облицовка стен</li>
+                        <li class="flex items-center"><i class="fas fa-check text-secondary mr-2"></i> Затирка швов</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section-padding">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-dark mb-4">Галерея выполненных работ</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Реализованные проекты по ремонту и отделке помещений</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Item 1 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-md">
+                    <img src="https://picsum.photos/400/300?random=3" alt="Современная кухня после ремонта" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
+                        <div class="p-6 text-white">
+                            <h3 class="font-bold text-lg mb-2">Современная кухня</h3>
+                            <p class="text-sm">Полная перепланировка и отделка кухни в современном стиле</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 2 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-md">
+                    <img src="https://picsum.photos/400/300?random=4" alt="Гостиная в скандинавском стиле" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
+                        <div class="p-6 text-white">
+                            <h3 class="font-bold text-lg mb-2">Гостиная в скандинавском стиле</h3>
+                            <p class="text-sm">Ремонт гостиной с использованием натуральных материалов</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 3 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-md">
+                    <img src="https://picsum.photos/400/300?random=5" alt="Ванная комната с плиткой" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
+                        <div class="p-6 text-white">
+                            <h3 class="font-bold text-lg mb-2">Современная ванная комната</h3>
+                            <p class="text-sm">Полная замена сантехники и укладка плитки</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 4 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-md">
+                    <img src="https://picsum.photos/400/300?random=6" alt="Коттедж после ремонта" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
+                        <div class="p-6 text-white">
+                            <h3 class="font-bold text-lg mb-2">Загородный коттедж</h3>
+                            <p class="text-sm">Комплексный ремонт двухэтажного коттеджа</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 5 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-md">
+                    <img src="https://picsum.photos/400/300?random=7" alt="Офисное помещение" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
+                        <div class="p-6 text-white">
+                            <h3 class="font-bold text-lg mb-2">Офисное помещение</h3>
+                            <p class="text-sm">Ремонт офиса с зонированием пространства</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 6 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-md">
+                    <img src="https://picsum.photos/400/300?random=8" alt="Детская комната" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
+                        <div class="p-6 text-white">
+                            <h3 class="font-bold text-lg mb-2">Детская комната</h3>
+                            <p class="text-sm">Яркий и функциональный ремонт детской комнаты</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <a href="#contact" class="bg-primary text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-800 transition">Заказать аналогичный ремонт</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Projects Section -->
+    <section id="design" class="bg-light section-padding">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-dark mb-4">Дизайн-проекты</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Разрабатываем индивидуальные дизайн-проекты с 3D визуализацией</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <img src="https://picsum.photos/300/200?random=9" alt="3D визуализация гостиной" class="rounded-lg shadow-md w-full mb-4" loading="lazy">
+                            <img src="https://picsum.photos/300/250?random=10" alt="3D визуализация кухни" class="rounded-lg shadow-md w-full" loading="lazy">
+                        </div>
+                        <div class="mt-8">
+                            <img src="https://picsum.photos/300/250?random=11" alt="3D визуализация спальни" class="rounded-lg shadow-md w-full mb-4" loading="lazy">
+                            <img src="https://picsum.photos/300/200?random=12" alt="3D визуализация ванной" class="rounded-lg shadow-md w-full" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 lg:pl-12">
+                    <h3 class="text-2xl font-heading font-bold text-dark mb-6">Индивидуальный дизайн-проект</h3>
+                    <p class="text-gray-600 mb-6">Наши дизайнеры разработают для вас уникальный проект, который учитывает все ваши пожелания, особенности помещения и бюджет.</p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <div class="bg-primary text-white p-2 rounded-full mr-4">
+                                <i class="fas fa-ruler-combined"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Обмеры и планировка</h4>
+                                <p class="text-gray-600 text-sm">Точные замеры помещения и разработка оптимальной планировки</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-primary text-white p-2 rounded-full mr-4">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Подбор материалов и цветов</h4>
+                                <p class="text-gray-600 text-sm">Рекомендации по материалам отделки, мебели и цветовой гамме</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-primary text-white p-2 rounded-full mr-4">
+                                <i class="fas fa-cube"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">3D визуализация</h4>
+                                <p class="text-gray-600 text-sm">Реалистичная 3D визуализация будущего интерьера</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-primary text-white p-2 rounded-full mr-4">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Техническая документация</h4>
+                                <p class="text-gray-600 text-sm">Подробные чертежи и схемы для строительной бригады</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="bg-primary text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-800 transition">Заказать дизайн-проект</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="section-padding">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-dark mb-4">Отзывы клиентов</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Что говорят наши клиенты о работе с ASTRO</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-primary bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-primary font-bold">АИ</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Анна Иванова</h4>
+                            <div class="flex text-secondary">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Заказывали ремонт кухни и ванной. Работой очень довольны! Сделали все качественно, в срок, без лишних наценок. Особенно понравилось, что после себя все убрали, оставили чистоту. Рекомендую!"</p>
+                    <div class="mt-4 text-sm text-gray-500">Ремонт кухни и ванной, 2023</div>
+                </div>
+                
+                <!-- Review 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-primary bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-primary font-bold">СП</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Сергей Петров</h4>
+                            <div class="flex text-secondary">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Делали ремонт в новой квартире под ключ. Отличная команда, все работы выполнены качественно. Всегда были на связи, консультировали по материалам. Сроки сдвинулись всего на 3 дня из-за задержки поставки плитки. В целом очень доволен результатом!"</p>
+                    <div class="mt-4 text-sm text-gray-500">Ремонт квартиры под ключ, 2023</div>
+                </div>
+                
+                <!-- Review 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-primary bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-primary font-bold">МК</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Мария Козлова</h4>
+                            <div class="flex text-secondary">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Заказывали дизайн-проект и последующий ремонт гостиной. Дизайнер предложила несколько вариантов, остановились на скандинавском стиле. Бригада работала аккуратно, мусор вывозили регулярно. Результат превзошел ожидания!"</p>
+                    <div class="mt-4 text-sm text-gray-500">Дизайн-проект и ремонт гостиной, 2024</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-dark text-white section-padding">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Свяжитесь с нами</h2>
+                <p class="text-gray-300 max-w-3xl mx-auto">Оставьте заявку и мы свяжемся с вами в течение 30 минут для бесплатной консультации</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10">
+                    <h3 class="text-2xl font-bold mb-6">Контактная информация</h3>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start">
+                            <div class="bg-primary p-3 rounded-lg mr-4">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Адрес офиса</h4>
+                                <p class="text-gray-300">г. Москва, ул. Строителей, д. 15, офис 204</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-primary p-3 rounded-lg mr-4">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Телефон</h4>
+                                <p class="text-gray-300">+7 (495) 123-45-67</p>
+                                <p class="text-gray-300">+7 (916) 987-65-43</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-primary p-3 rounded-lg mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Email</h4>
+                                <p class="text-gray-300">info@astro-remont.ru</p>
+                                <p class="text-gray-300">sales@astro-remont.ru</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-primary p-3 rounded-lg mr-4">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Режим работы</h4>
+                                <p class="text-gray-300">Пн-Пт: 9:00 - 20:00</p>
+                                <p class="text-gray-300">Сб-Вс: 10:00 - 18:00</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h4 class="font-bold mb-4">Мы в социальных сетях</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-gray-700 hover:bg-primary p-3 rounded-lg transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="bg-gray-700 hover:bg-primary p-3 rounded-lg transition">
+                                <i class="fab fa-vk"></i>
+                            </a>
+                            <a href="#" class="bg-gray-700 hover:bg-primary p-3 rounded-lg transition">
+                                <i class="fab fa-telegram"></i>
+                            </a>
+                            <a href="#" class="bg-gray-700 hover:bg-primary p-3 rounded-lg transition">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-gray-800 p-8 rounded-xl">
+                        <h3 class="text-2xl font-bold mb-6">Форма обратной связи</h3>
+                        <form id="contact-form">
+                            <div class="mb-4">
+                                <label for="name" class="block mb-2">Ваше имя *</label>
+                                <input type="text" id="name" name="name" required class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="phone" class="block mb-2">Телефон *</label>
+                                <input type="tel" id="phone" name="phone" required class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="email" class="block mb-2">Email</label>
+                                <input type="email" id="email" name="email" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="service" class="block mb-2">Услуга</label>
+                                <select id="service" name="service" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-primary">
+                                    <option value="">Выберите услугу</option>
+                                    <option value="apartment">Ремонт квартиры</option>
+                                    <option value="cottage">Ремонт коттеджа</option>
+                                    <option value="design">Дизайн-проект</option>
+                                    <option value="painting">Малярные работы</option>
+                                    <option value="electric">Электромонтажные работы</option>
+                                    <option value="plumbing">Сантехнические работы</option>
+                                    <option value="tiling">Укладка плитки</option>
+                                    <option value="other">Другое</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="message" class="block mb-2">Сообщение</label>
+                                <textarea id="message" name="message" rows="4" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="bg-primary hover:bg-blue-800 text-white font-medium py-3 px-8 rounded-lg w-full transition">Отправить заявку</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <div class="bg-primary p-2 rounded-lg mr-3">
+                            <i class="fas fa-hammer"></i>
+                        </div>
+                        <a href="#home" class="text-2xl font-heading font-bold">ASTRO<span class="text-primary">.</span></a>
+                    </div>
+                    <p class="text-gray-400 mt-2">Профессиональный ремонт квартир и коттеджей под ключ</p>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400">© 2024 ASTRO. Все права защищены.</p>
+                    <p class="text-gray-400 mt-2">+7 (495) 123-45-67 | info@astro-remont.ru</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>Сайт разработан для строительной и отделочной команды ASTRO. Все изображения на сайте используются в демонстрационных целях.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-blue-800 transition hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white p-8 rounded-xl max-w-md mx-4">
+            <div class="text-center">
+                <div class="bg-green-100 text-green-600 p-3 rounded-full inline-block mb-4">
+                    <i class="fas fa-check text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Заявка отправлена!</h3>
+                <p class="text-gray-600 mb-6">Мы свяжемся с вами в течение 30 минут для уточнения деталей.</p>
+                <button id="close-modal" class="bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-800 transition">Закрыть</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        
+        mobileMenuButton.addEventListener("click", function() {
+            mobileMenu.classList.toggle("hidden");
+        });
+        
+        // Close mobile menu when clicking a link
+        const mobileLinks = document.querySelectorAll("#mobile-menu a");
+        mobileLinks.forEach(link => {
+            link.addEventListener("click", function() {
+                mobileMenu.classList.add("hidden");
+            });
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById("back-to-top");
+        
+        window.addEventListener("scroll", function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove("hidden");
+            } else {
+                backToTopButton.classList.add("hidden");
+            }
+        });
+        
+        backToTopButton.addEventListener("click", function() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+        
+        // Form submission
+        const contactForm = document.getElementById("contact-form");
+        const successModal = document.getElementById("success-modal");
+        const closeModal = document.getElementById("close-modal");
+        
+        contactForm.addEventListener("submit", function(e) {
+            e.preventDefault();
+            
+            // In a real application, you would send the form data to a server here
+            // For demonstration, we'll just show the success modal
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const formObject = {};
+            formData.forEach((value, key) => {
+                formObject[key] = value;
+            });
+            
+            console.log("Form submitted:", formObject);
+            
+            // Show success modal
+            successModal.classList.remove("hidden");
+            
+            // Reset form
+            contactForm.reset();
+        });
+        
+        closeModal.addEventListener("click", function() {
+            successModal.classList.add("hidden");
+        });
+        
+        // Close modal when clicking outside
+        successModal.addEventListener("click", function(e) {
+            if (e.target === successModal) {
+                successModal.classList.add("hidden");
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener("click", function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute("href");
+                if (targetId === "#") return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+        
+        // Prevent default behavior for all anchor tags (as required)
+        document.querySelectorAll("a").forEach(anchor => {
+            anchor.addEventListener("click", function(e) {
+                // We already handle anchor links with smooth scrolling above
+                // For external links or other cases, we would prevent default
+                // But since we're using # anchors for navigation, we handle them above
+                // For other links, we might want to allow default behavior
+                // So we only prevent default for # links that we handle
+                if (this.getAttribute("href")?.startsWith("#")) {
+                    // Already handled above
+                }
+            });
+        });
+    </script>
+</body>
+</html>
